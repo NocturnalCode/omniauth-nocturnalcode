@@ -15,9 +15,13 @@ module OmniAuth
 
       info do
         {
-          :email => raw_info["email"],
+          :email => email,
           :name => raw_info["name"]
         }
+      end
+      
+      def email
+        raw_info["email"]
       end
 
       def raw_info
@@ -27,3 +31,5 @@ module OmniAuth
     end
   end
 end
+
+OmniAuth.config.add_camelization 'nocturnalcode', 'NocturnalCode'

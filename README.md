@@ -26,7 +26,7 @@ require 'omniauth-nocturnalcode'
 
 use Rack::Session::Cookie
 use OmniAuth::Builder do
-  provider "NocturnalCode", 'YOUR_CLIENT_ID', 'YOUR_CLIENT_SECRET'
+  provider :nocturnalcode, 'YOUR_CLIENT_ID', 'YOUR_CLIENT_SECRET'
 end
 
 get '/auth/:provider/callback' do
