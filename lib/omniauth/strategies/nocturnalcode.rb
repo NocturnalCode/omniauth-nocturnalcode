@@ -3,11 +3,11 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class NocturnalCode < OmniAuth::Strategies::OAuth2
-      
+
       option :name, "nocturnalcode"
 
       option :client_options, {
-        :site => "http://nocturnalcode.com",
+        :site => "https://portal.nocturnalcode.com",
         :authorize_url => "/oauth/authorize"
       }
 
@@ -19,7 +19,7 @@ module OmniAuth
           :name => raw_info["name"]
         }
       end
-      
+
       def email
         raw_info["email"]
       end
@@ -27,7 +27,7 @@ module OmniAuth
       def raw_info
         @raw_info ||= access_token.get('/oauth/me').parsed
       end
-      
+
     end
   end
 end
